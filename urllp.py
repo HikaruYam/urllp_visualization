@@ -19,5 +19,8 @@ print(df.values[:, 1])
 
 delay_data = df.values[:, 1]
 
+delay_data *= 1000000
+
 #10~130 every 2 usec
-plt.hist(delay_data, bins=60, range(10, 130), rwidth=0.8)
+plt.hist(delay_data, bins=60, range=(10, 130), rwidth=0.8)
+plt.show()
