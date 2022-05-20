@@ -11,7 +11,8 @@ def show_urllp():
         #tcpdump generate test.pcap
         sp.run("echo tcpdump", shell=True)
         print("finish")
-        #tcpdump -i eno2 -w yam0518ats2.pcap -W1 -G10
+        #tcpdump -i eno2 -w yam0518ats2.pcap -W 1 -G 10
+        #-W 回数 -G インターバル間隔(sec)
 
         #nasu program execute
         #generate analysi.csv
