@@ -36,6 +36,7 @@ def show_urllp():
             print("import time ", t3-t2, "sec")
 
             #10~130 every 2 usec
+            plt.yscale("log")
             plt.ylim([0, 600])
             plt.hist(delay_data, bins=60, range=(10, 130), rwidth=0.8, color="r")
             t4 = time.time()
