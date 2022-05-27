@@ -12,7 +12,7 @@ def show_urllp():
         t0 = time.time()
         #tcpdump generate test.pcap
         #sp.run("echo tcpdump", shell=True)
-        sp.run("sudo tcpdump src host 10.10.81.50 -i eno2 -w capture.pcap -W 1 -G 2", shell=True)
+        sp.run("sudo tcpdump src host 10.10.81.50 -i eno2 -w capture.pcap -W 1 -c 2000", shell=True)
         t1 = time.time() 
         print("tcpdump finish ", t1-t0, "sec")
         #tcpdump -i eno2 -w yam0518ats2.pcap -W 1 -G 10
@@ -36,6 +36,7 @@ def show_urllp():
             print("import time ", t3-t2, "sec")
 
             #10~130 every 2 usec
+            plt.ylim([0, 600])
             plt.hist(delay_data, bins=60, range=(10, 130), rwidth=0.8, color="r")
             t4 = time.time()
             print("plot time ", t4-t3, "sec")
